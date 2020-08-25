@@ -2,6 +2,7 @@ FROM webdevops/nginx
 MAINTAINER sadisticsolutione@gmail.com
 
 COPY no-cache.conf /opt/docker/etc/nginx/vhost.common.d/10-no-cache.conf
+COPY index.html /app/index.html
 
 RUN mkdir -p /app /src \
  && cd /src \
