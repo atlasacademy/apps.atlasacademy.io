@@ -2,6 +2,7 @@
 FROM node:13.8.0-alpine3.11 as build
 WORKDIR /src
 RUN apk add --no-cache curl
+ENV GENERATE_SOURCEMAP false
 
 RUN curl -L -o fgo-lookup.tar.gz https://github.com/jycl1234/fgo-lookup/archive/master.tar.gz
 RUN tar -zxvf fgo-lookup.tar.gz
