@@ -13,10 +13,10 @@ RUN tar -zxvf drop-serializer.tar.gz
 RUN cd drop-serializer-react-master && npm install && npm run build
 RUN mkdir -p /app/ && cp -r drop-serializer-react-master/build/ /app/drop-serializer
 
-RUN curl -L -o aa-db.tar.gz https://github.com/atlasacademy/aa-db/archive/master.tar.gz
-RUN tar -zxvf aa-db.tar.gz
-RUN cd aa-db-master && npm install && npm run build
-RUN mkdir -p /app/ && cp -r aa-db-master/build/ /app/db
+RUN curl -L -o apps.tar.gz https://github.com/atlasacademy/apps/archive/master.tar.gz
+RUN tar -zxvf apps.tar.gz
+RUN cd apps-master/packages/db && npm install && npm run build
+RUN mkdir -p /app/ && cp -r apps-master/packages/db/build /app/db
 
 # stage 2 : copy & fire things up
 FROM webdevops/nginx
