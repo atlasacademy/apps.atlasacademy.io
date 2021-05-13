@@ -24,6 +24,7 @@ FROM webdevops/nginx
 COPY no-cache.conf /opt/docker/etc/nginx/vhost.common.d/10-no-cache.conf
 COPY gzip.conf /opt/docker/etc/nginx/conf.d/20-gzip.conf
 COPY index.html /app/index.html
+COPY robots.txt /app/robots.txt
 COPY --from=build /app/ /app/
 RUN chown -R 1000:1000 /app
 ENV WEB_DOCUMENT_INDEX=index.html
